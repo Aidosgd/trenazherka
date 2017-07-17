@@ -19,7 +19,11 @@ window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
 require('bootstrap-sass');
-
+require('./libs/jquery-2.1.0.min.js+bootstrap.min.js+jquery.min.js+jquery.easing.1.3.js+parallax,_jquery.parallax-1.1.3.js+parallax,_jquery.transform2d.js+parallax,_script.js+parallax,_parallax.js+waypoints.js+template.js.pagespeed.jc.rrvfRVY2Sr.js')
+require('./libs/masterslider.min.js')
+require('./libs/banner.js+owl.carousel.min.js+theme.js+dropdown.js+classie.js+main.js.pagespeed.jc.uGNWcA1Oxk.js')
+require('slick-carousel');
+require('./libs/main.js');
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
  * using reactive data binding and reusable components. Vue's API is clean

@@ -16,7 +16,7 @@ return array(
     |
     */
    
-    'route' => null,
+    'route' => 'img/cache',
 
     /*
     |--------------------------------------------------------------------------
@@ -31,8 +31,7 @@ return array(
     */
     
     'paths' => array(
-        public_path('upload'),
-        public_path('images')
+        public_path('uploads')
     ),
 
     /*

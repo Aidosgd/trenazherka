@@ -1,9 +1,107 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+//@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 // Variables
-@import "variables";
+//@import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+@import "css/style.css+bootstrap.css+font-awesome.css.pagespeed.cc.VVWCBk7kTK";
+@import "css/A.effect.css+animation.css,Mcc.9RNVxgTl8h.css.pagespeed.cf.mlEaWlb40a";
+@import "css/masterslider.css+ms-fullscreen.css.pagespeed.cc.ZXNelNNiwZ";
+@import "css/A.owl.carousel.css+owl.transitions.css,Mcc.V81RqIPaJV.css.pagespeed.cf.-nHJPGszrV";
+@import "css/A.color.css.pagespeed.cf.-Zo0U0_byx";
+@import "node_modules/slick-carousel/slick/slick.scss";
+@import "node_modules/slick-carousel/slick/slick-theme.scss";
+
+.slick-slider{
+  width: 100%;
+  overflow: hidden;
+  .slick-dots{
+    bottom: 100px;
+    li{
+      &.slick-active{
+        button{
+          &:before{
+            color: #ec3642;
+          }
+        }
+      }
+      button{
+        &:before{
+          color: white;
+          font-size: 60px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .slick-arrow{
+    z-index: 1000;
+    &:before{
+      width: 30px;
+      height: 40px;
+      display: block;
+      font-size: inherit;
+      background: url(/images/light-skin-1.png) repeat scroll -89px -26px rgba(0, 0, 0, 0);
+    }
+    &.slick-next{
+      right: 65px;
+      &:before{
+        background: url(/images/light-skin-1.png) repeat scroll -89px -103px transparent
+      }
+    }
+    &.slick-prev{
+      left: 65px;
+    }
+  }
+  
+  .slide{
+    position: relative;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    .content{
+      position: absolute;
+      left: 20%;
+      top: 45%;
+      transform: translateY(-50%);
+      .small{
+        border: 2px solid;
+        padding: 5px 10px;
+        font-size: 26px;
+        text-transform: uppercase;
+        display: inline-block;
+      }
+      .large{
+        font-size: 70px;
+        font-family: bold;
+        text-transform: uppercase;
+        line-height: 90px;
+      }
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: url("/images/pattern.png");
+    }
+  }
+}
+
+.contents-main{
+  margin-top: 0 !important;
+}
+
+.price-table-text{
+  width: 100%;
+  left: 0;
+}
