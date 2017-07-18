@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Ibec\Content\Post;
 use Ibec\Media\Gallery;
 use Illuminate\Http\Request;
 
@@ -11,6 +12,10 @@ class HomeController extends Controller
     {
         $slider = Gallery::find(1);
 
-        return view('layouts.app', compact('slider'));
+        $products = Post::whereHas('nodes', function ($q){
+            $q->where('fields->new_product', '1');
+        })->get();
+
+        return view('home', compact('slider', 'products'));
     }
 }
