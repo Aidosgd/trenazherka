@@ -1,6 +1,6 @@
 
 // Fonts
-//@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Play);
 
 // Variables
 //@import "variables";
@@ -16,6 +16,12 @@
 @import "css/A.color.css.pagespeed.cf.-Zo0U0_byx";
 @import "node_modules/slick-carousel/slick/slick.scss";
 @import "node_modules/slick-carousel/slick/slick-theme.scss";
+
+$fontFamily: 'Play', sans-serif;
+
+div, span, p, h1, h2, h3, h4, h5, h6, a{
+  font-family: $fontFamily !important;
+}
 
 .slick-slider{
   width: 100%;
@@ -104,4 +110,39 @@
 .price-table-text{
   width: 100%;
   left: 0;
+}
+
+
+.header{
+  &.black{
+    animation: reveal-header 1s cubic-bezier(0.005, 0.975, 0.73, 1);
+    border: 1px solid transparent;
+    background: #0f0f0f;
+    box-shadow: 0 5px 8px 5px rgba(0, 0, 0, 0.2);
+  }
+  &.header-container{
+    //background: black;
+    .logo a{
+      font-family: $fontFamily;
+      font-size: 30px;
+      border: 1px solid white;
+      padding: 10px;
+    }
+  }
+  .header-icons{
+    text-align: center;
+    line-height: 20px;
+    padding-top: 20px;
+  }
+}
+
+.price-table-text{
+  height: inherit;
+  padding: 15px;
+  text-align: center;
+  min-height: 150px;
+}
+
+.product-list{
+  padding-top: 50px;
 }

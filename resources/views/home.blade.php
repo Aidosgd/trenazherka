@@ -20,42 +20,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="col-md-4 col-sm-12 col-xs-12">
-                            <div class="col-md-12 price-table-content">
-                                <div class="price-table-text">
-                                    <h3>New Products</h3>
-                                    <h2>Sport Collection</h2>
-                                    <div class="border-bottom"></div>
-                                    <p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem
-                                        ipsum dolor.</p>
-                                    <a href="#"><span>Shop Now</span></a>
+                        @foreach($productsCategory->children as $category)
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="col-md-12 price-table-content">
+                                    <div class="price-table-text">
+                                        <h3>{{ $category->node->title }}</h3>
+                                        <a href="/product/{{ $category->node->slug }}"><span>Посмотреть</span></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 col-xs-12">
-                            <div class="col-md-12 price-table-content">
-                                <div class="price-table-text">
-                                    <h3>Popular Products</h3>
-                                    <h2>Step Machines</h2>
-                                    <div class="border-bottom"></div>
-                                    <p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem
-                                        ipsum dolor.</p>
-                                    <a href="#"><span>Shop Now</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 col-xs-12">
-                            <div class="col-md-12 price-table-content">
-                                <div class="price-table-text">
-                                    <h3>Sale Products</h3>
-                                    <h2>Home gyms</h2>
-                                    <div class="border-bottom"></div>
-                                    <p>Phasellus molestie magna non est bibendum non venenatis nisl tempor lorem
-                                        ipsum dolor.</p>
-                                    <a href="#"><span>Shop Now</span></a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -564,4 +538,35 @@
         </section>
         <!--  End Fit & Strong  -->
     </div>
+@endsection
+@section('scripts')
+    <script>
+        var windowHeight = $(window).height(),
+                mainSlider = $('.slick-slider'),
+                header = $('.header');
+
+        mainSlider.slick({
+            dots: true,
+            arrows: true
+        });
+
+        mainSlider.css({
+            height : windowHeight
+        });
+
+        var lastScrollTop = 0;
+        $(window).scroll(function(event){
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop){
+                if(lastScrollTop > windowHeight){
+                    header.addClass('black');
+                }
+            } else {
+                if(lastScrollTop < windowHeight){
+                    header.removeClass('black');
+                }
+            }
+            lastScrollTop = st;
+        });
+    </script>
 @endsection

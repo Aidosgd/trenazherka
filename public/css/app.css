@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Play);
 /*-------------------------------------------------------
 [Table of contents]
 
@@ -22828,6 +22829,10 @@ button.close {
   opacity: 0.75;
 }
 
+div, span, p, h1, h2, h3, h4, h5, h6, a {
+  font-family: "Play", sans-serif !important;
+}
+
 .slick-slider {
   width: 100%;
   overflow: hidden;
@@ -22920,6 +22925,38 @@ button.close {
 .price-table-text {
   width: 100%;
   left: 0;
+}
+
+.header.black {
+  -webkit-animation: reveal-header 1s cubic-bezier(0.005, 0.975, 0.73, 1);
+  animation: reveal-header 1s cubic-bezier(0.005, 0.975, 0.73, 1);
+  border: 1px solid transparent;
+  background: #0f0f0f;
+  box-shadow: 0 5px 8px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header.header-container .logo a {
+  font-family: "Play", sans-serif;
+  font-size: 30px;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.header .header-icons {
+  text-align: center;
+  line-height: 20px;
+  padding-top: 20px;
+}
+
+.price-table-text {
+  height: inherit;
+  padding: 15px;
+  text-align: center;
+  min-height: 150px;
+}
+
+.product-list {
+  padding-top: 50px;
 }
 
 /*# sourceMappingURL=app.css.map */

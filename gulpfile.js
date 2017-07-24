@@ -17,5 +17,6 @@ elixir(mix => {
     mix.sass('app.scss')
         .webpack('app.js')
         .copy('./resources/assets/fonts/**.*', 'public/fonts')
-        .copy('./resources/assets/images/**.*', 'public/images');
+        .copy('./resources/assets/images/**.*', 'public/images')
+        .browserSync({'proxy' : 'trenazherka.dev'});
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Ibec\Content\Category;
 use Ibec\Content\Post;
 use Ibec\Media\Gallery;
 use Illuminate\Http\Request;
@@ -16,6 +17,8 @@ class HomeController extends Controller
             $q->where('fields->new_product', '1');
         })->get();
 
-        return view('home', compact('slider', 'products'));
+        $productsCategory = Category::find(1);
+
+        return view('home', compact('slider', 'products', 'productsCategory'));
     }
 }

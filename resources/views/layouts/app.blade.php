@@ -49,5 +49,6 @@
     </div>
     <!--End To Top-->
     <script src="/js/app.js"></script>
+    @yield('scripts')
 </div>
 </html>
