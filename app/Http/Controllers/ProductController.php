@@ -16,6 +16,22 @@ class ProductController extends Controller
         })->first();
         $products = Post::where('category_id', $category->id)->get();
 
-        return view('product.index', compact('products'));
+        return view('product.index', compact('products', 'category'));
+    }
+
+    public function show($slug, $product)
+    {
+        $category = Category::whereHas('nodes', function ($q) use ($slug){
+            $q->where('slug', $slug);
+        })->first();
+
+        $product = Post::whereHas('nodes', function ($q) use ($product){
+            $q->where('slug', $product);
+        })->first();
+
+//        dd($product);
+
+        return view('product.show', compact('product', 'category'));
+
     }
 }

@@ -18,7 +18,7 @@
                 <nav class="megamenu collapse navbar-collapse bs-navbar-collapse navbar-right mainnav col-md-10"
                      role="navigation">
                     <ul class="nav-menu">
-                        <li><a href="contact-us.html">Contact us</a></li>
+                        {{--<li><a href="/contacts">Контакты</a></li>--}}
                     </ul>
                 </nav>
             </div>

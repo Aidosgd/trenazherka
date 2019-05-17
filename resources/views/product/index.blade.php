@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="banner-content">
                     <div class="page-title">
-                        <h3>Product listing</h3>
+                        <h3>{{ $category->node->title }}</h3>
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                         <ul>
                             <li class="home"><a href="/"><i class="fa fa-home"></i> Главная страница</a></li>
                             <li><span>//</span></li>
-                            <li class="category-2">Страница товаров</li>
+                            <li class="category-2">{{ $category->node->title }}</li>
                         </ul>
                     </div>
                 </div>
@@ -38,11 +38,11 @@
                                 <div class="product-image-wrapper">
                                     <div class="product-content">
                                         <div class="product-image">
-                                            <a href="#"><img alt="" src="{{ $product->images->first()->path }}"></a>
+                                            <a href="/product/{{ $category->node->slug }}/{{ $product->node->slug }}"><img alt="" src="{{ $product->images->first()->path }}"></a>
                                         </div>
                                         <div class="info-products">
                                             <div class="product-name">
-                                                <a href="product-detail.html">{{ $product->node->title }}</a>
+                                                <a href="/product/{{ $category->node->slug }}/{{ $product->node->slug }}">{{ $product->node->title }}</a>
                                                 <div class="product-bottom"></div>
                                             </div>
                                             <div class="price-box">
@@ -50,7 +50,7 @@
                                                 <span class="old-price">{{ $product->node->fields->old_price }} тг</span>
                                             </div>
                                             <div class="actions">
-                                                {!! $product->node->content !!}
+                                                {!! $product->node->teaser !!}
                                                 {{--<ul>--}}
                                                     {{--<li><a href="#"><i class="fa fa-info"></i></a></li>--}}
                                                     {{--<li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>--}}
